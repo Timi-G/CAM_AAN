@@ -120,7 +120,6 @@ def conf_flight_movement(flights,fl,obs_pos):
     tdes=temp_des
     des=fl.dest
 
-    print(dep)
     # define conflict radius around destination
     con_des=obj_radius(1,des)
 
