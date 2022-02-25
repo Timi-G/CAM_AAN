@@ -4,7 +4,7 @@ import random
 from matplotlib import pyplot as plt
 import numpy as np
 
-import cam_airnavconfrules as ccf
+import confrules as ccf
 
 
 '''Object Classes'''
