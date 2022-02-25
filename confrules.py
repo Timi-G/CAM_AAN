@@ -2,7 +2,7 @@ from math import dist
 
 
 '''Conflicts Resolution'''
-# resolving an object's conflict radius (size=1)
+# resolving an object's conflict radius
 def obj_radius(size, pos):
     rad=[pos]
 
