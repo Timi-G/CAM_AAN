@@ -1,4 +1,4 @@
-from cam_airnav_mod import Flight, Waypoint, Obstruction, TMA, Point,\
+from rules import Flight, Waypoint, Obstruction, TMA, Point,\
                             simulate, display_results, create_flights
 
 
