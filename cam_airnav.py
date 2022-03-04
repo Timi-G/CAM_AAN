@@ -7,7 +7,7 @@ and include all objects needed in respective experiment list
 
 for random generated flights, follow convention in example fr1,fr2...
 args north, south, east, west defines number of flights with entry points/departure
-in that direction. size is size of flight, spread is multiple by which flight is
+in that direction. size is size of aircraft, spread is multiple by which flight is
 scattered across tma and apace is to define a static perimeter.
 spread must be 1 for aspace to have any effect.
 
