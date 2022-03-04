@@ -305,26 +305,38 @@ def _se_dep_flights(se,sed,dest,size):
     return fl
 
 # func to create flights
-def create_flights(north,south,east,west,dest,size,spread):
+def create_flights(north,south,east,west,dest,size,spread,aspace):
     global gnum_sdf
 
     num_sdf=[north,south,east,west]
     gnum_sdf = [a + b for a, b in zip(num_sdf, gnum_sdf)]
 
     spn = split_num(north)
-    ospn = split_num(gnum_sdf[0])
+    if spread==1:
+        ospn = [aspace,aspace]
+    else:
+        ospn = split_num(gnum_sdf[0])
     n=_nw_dep_flights(spn[0],ospn[0]*spread,dest,size) + _ne_dep_flights(spn[1],ospn[1]*spread,dest,size)
 
     sps = split_num(south)
-    osps = split_num(gnum_sdf[1])
+    if spread==1:
+        osps = [aspace,aspace]
+    else:
+        osps = split_num(gnum_sdf[1])
     s=_se_dep_flights(sps[0],osps[0]*spread,dest,size) + _sw_dep_flights(sps[1],osps[1]*spread,dest,size)
 
     spe = split_num(east)
-    ospe = split_num(gnum_sdf[2])
+    if spread==1:
+        ospe = [aspace,aspace]
+    else:
+        ospe = split_num(gnum_sdf[2])
     e=_ne_dep_flights(spe[0],(ospn[1]+ospe[0])*spread,dest,size) + _se_dep_flights(spe[1],(osps[0]+ospe[1])*spread,dest,size)
 
     spw = split_num(west)
-    ospw = split_num(gnum_sdf[3])
+    if spread==1:
+        ospw = [aspace,aspace]
+    else:
+        ospw = split_num(gnum_sdf[3])
     w=_nw_dep_flights(spw[0],(ospn[0]+ospw[0])*spread,dest,size) + _sw_dep_flights(spw[1],(osps[1]+ospw[1])*spread,dest,size)
 
     flights = n + s + e + w
